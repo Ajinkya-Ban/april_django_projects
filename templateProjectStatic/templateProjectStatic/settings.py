@@ -1,16 +1,15 @@
+
 from pathlib import Path
 import os
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-# SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'django-insecure-ujzb7$3y!%$4j1-t5n2a69l_wbb13fwo!9cj=3o@ybu$8^hpfv'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-1@&c!nq%4-c_i3tvc6q))=xxg-$+8$-m@h&ig$iv1-6#21%&o@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'templateProject.urls'
+ROOT_URLCONF = 'templateProjectStatic.urls'
 
 TEMPLATES = [
     {
@@ -58,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'templateProject.wsgi.application'
+WSGI_APPLICATION = 'templateProjectStatic.wsgi.application'
 
 
 # Database

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/calc.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="text">
+            <h2>Calculator App</h2>
+        </div>
+        <div class="b1">
+            <img src="/static/imgs/calc.gif" alt="calculator">
+        </div>
+        <div class="b2">
+            <table>
+                <tr>
+                    <td><label for="n1">Enter First Number</label></td>
+                    <td>
+                        <input type="text" id="n1" autocomplete="off">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="n2">Enter Second Number</label></td>
+                    <td>
+                        <input type="text" id="n2" autocomplete="off">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="res">Final Result</label></td>
+                    <td>
+                        <input type="text" id="res" autocomplete="off" readonly>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Do Task">
+                        <input type="submit" value="Clear Fields" onclick="clearFields()">
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
