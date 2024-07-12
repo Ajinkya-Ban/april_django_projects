@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/calc.js"></script>
 </head>
-<body>
+<body onload="focusCursor()">
     <div class="box">
         <div class="text">
-            <h2>Calculator App</h2>
+            <h2>Calculator App😎</h2>
         </div>
         <div class="b1">
             <img src="/static/imgs/calc.gif" alt="calculator">
@@ -32,6 +32,19 @@
                 </tr>
 
                 <tr>
+                    <td><label for="n2">Select Operation</label></td>
+                    <td>
+                      <select id="op">
+                        <option value="select">Select Operation</option>
+                        <option value="+">Addition</option>
+                        <option value="-">Subtraction</option>
+                        <option value="*">Multiplication</option>
+                        <option value="/">divide</option>
+                      </select>
+                    </td>
+                </tr>
+
+                <tr>
                     <td><label for="res">Final Result</label></td>
                     <td>
                         <input type="text" id="res" autocomplete="off" readonly>
@@ -42,7 +55,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Do Task">
+                        <input type="submit" value="Do Task" onclick="doTask()">
                         <input type="submit" value="Clear Fields" onclick="clearFields()">
                     </td>
                 </tr>

@@ -43,6 +43,7 @@ label{
 input[type=text]:focus
 {
     outline: 0;
+    
 }
 input[type=submit]
 {
