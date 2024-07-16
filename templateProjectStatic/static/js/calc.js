@@ -18,18 +18,22 @@ function checkEmptyFields()
     {
         alert("Please enter first number");
         document.getElementById('n1').focus();
+        return false
         // document.getElementById('n1').style.borderColor="red";
     }
     else if(document.getElementById('n2').value == "")
     {
         alert("Please enter second number");
         document.getElementById('n2').focus();
+        return false
     }
     else if(document.getElementById('op').value == 'select')
     {
         alert('Please select at least one operation');
         document.getElementById('op').focus();
+        return false
     }
+    return true
 }
 
 function doTask()
@@ -39,9 +43,6 @@ function doTask()
     var num1 = document.getElementById('n1').value;
     var num2 = document.getElementById('n2').value;
     var drp = document.getElementById('op').value;
-
-  
-
     switch(drp)
     {
         case '+':
@@ -67,3 +68,5 @@ function doTask()
     }
 
 }
+
+

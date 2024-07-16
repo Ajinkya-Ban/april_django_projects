@@ -1,68 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="icon" type="image/icon" href="/static/imgs/favicon.ico" />
     <script src="/static/js/calc.js"></script>
-</head>
-<body onload="focusCursor()">
+
+    <script type="text/javascript">
+      function disabled() {
+        const btnTask = document.getElementById("doTask");
+        btnTask.disabled = true;
+      }
+      function addition() 
+      {
+            if (!checkEmptyFields()) {
+                return false;
+            }
+            var num1 = document.getElementById("n1").value;
+            var num2 = document.getElementById("n2").value;
+            var drp = document.getElementById("op").value;
+            if (drp == "+") {
+                var res = parseInt(num1) + parseInt(num2);
+                document.getElementById("res").value = res;
+            }
+        }
+    </script>
+  </head>
+  <body onload="focusCursor();disabled()">
     <div class="box">
-        <div class="text">
-            <h2>Calculator App😎</h2>
-        </div>
-        <div class="b1">
-            <img src="/static/imgs/calc.gif" alt="calculator">
-        </div>
-        <div class="b2">
-            <table>
-                <tr>
-                    <td><label for="n1">Enter First Number</label></td>
-                    <td>
-                        <input type="text" id="n1" autocomplete="off">
-                    </td>
-                </tr>
+      <div class="text">
+        <h2>Calculator App</h2>
+      </div>
+      <div class="b1">
+        <img src="/static/imgs/calc.gif" alt="calculator" />
+      </div>
+      <div class="b2">
+        <table>
+          <tr>
+            <td><label for="n1">Enter First Number</label></td>
+            <td>
+              <input type="text" id="n1" autocomplete="off" onkeypress="onlyNumber(event)" />
+            </td>
+          </tr>
 
-                <tr>
-                    <td><label for="n2">Enter Second Number</label></td>
-                    <td>
-                        <input type="text" id="n2" autocomplete="off">
-                    </td>
-                </tr>
+          <tr>
+            <td><label for="n2">Enter Second Number</label></td>
+            <td>
+              <input type="text" id="n2" autocomplete="off" onkeypress="onlyNumber(event)"/>
+            </td>
+          </tr>
 
-                <tr>
-                    <td><label for="n2">Select Operation</label></td>
-                    <td>
-                      <select id="op">
-                        <option value="select">Select Operation</option>
-                        <option value="+">Addition</option>
-                        <option value="-">Subtraction</option>
-                        <option value="*">Multiplication</option>
-                        <option value="/">divide</option>
-                      </select>
-                    </td>
-                </tr>
+          <tr>
+            <td><label for="n2">Select Operation</label></td>
+            <td>
+              <select id="op">
+                <option value="select">Select Operation</option>
+                <option value="+">Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="*">Multiplication</option>
+                <option value="/">divide</option>
+              </select>
+            </td>
+          </tr>
 
-                <tr>
-                    <td><label for="res">Final Result</label></td>
-                    <td>
-                        <input type="text" id="res" autocomplete="off" readonly>
-                    </td>
-                </tr>
+          <tr>
+            <td><label for="res">Final Result</label></td>
+            <td>
+              <input type="text" id="res" autocomplete="off" readonly />
+            </td>
+          </tr>
 
-
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Do Task" onclick="doTask()">
-                        <input type="submit" value="Clear Fields" onclick="clearFields()">
-                    </td>
-                </tr>
-
-            </table>
-
-        </div>
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="submit"
+                value="Do Task"
+                onclick="doTask()"
+                id="doTask"
+              />
+              <input
+                type="submit"
+                value="Clear Fields"
+                onclick="clearFields()"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-</body>
+
+    <script type="text/javascript">
+      const num1text = document.getElementById("n1");
+      const btnTask = document.getElementById("doTask");
+
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.key === "c") {
+          e.preventDefault(); // Prevent the default action (copy)
+          clearFields();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+            if (e.ctrlKey && e.key === "a") {
+                e.preventDefault(); // Prevent the default action (select all)
+                addition();
+            }
+        });
+
+      num1text.addEventListener("keyup", () => {
+        if (num1text.value.length > 0) {
+          btnTask.disabled = false;
+        } else {
+          btnTask.disabled = true;
+        }
+      });
+
+      function onlyNumber(event){
+        var ch = String.fromCharCode(event.which);
+        if(!(/[0-9]/.test(ch)))
+        {
+          event.preventDefault();
+        }
+
+      }
+    </script>
+  </body>
 </html>
