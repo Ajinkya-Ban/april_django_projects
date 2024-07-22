@@ -47,6 +47,11 @@
     text-decoration:none;
     padding:10px;
 }
+.menu ul li .active
+{
+    background-color: greenyellow;
+    color: white;
+}
 .slider
 {
     width:100%;
@@ -76,4 +81,13 @@
     text-align:center;
     line-height:60px;
     
+}
+.about h1{
+    color: white;
+    padding: 10px;
+}
+.about p
+{
+    padding: 10px;
+    text-align: justify;
 }

@@ -1,5 +1,5 @@
 """
-URL configuration for templateProject project.
+URL configuration for bootstrapProject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -17,9 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp import views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.welcome_view,name="home"),
-    path('about-us/', views.show_calc,name="about"),
+    path('index/', views.index_page),
 ]
