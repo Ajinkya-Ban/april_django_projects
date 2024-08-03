@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 
 # Create your views here.
 def welcome_view(request):
@@ -31,5 +31,24 @@ def welcome_view(request):
 def show_calc(request):
     if request.method == "GET":
         result = request.GET.get('result')
-
     return render(request, "myapp/calc.html",{"result":result})
+
+
+def submitans(request):
+    try:
+        finalans = 0
+        data = {}
+        if request.method == "POST":
+            num1 = int(request.POST.get('n1'))
+            num2 = int(request.POST.get('n2'))
+            finalans = num1 + num2
+       
+            data = {
+                "num1":num1,
+                "num2":num2,
+                "result":finalans
+            }
+            # url = "/about-us/?result={}".format(finalans)
+            return HttpResponse(finalans)
+    except:
+        pass
