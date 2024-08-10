@@ -3,7 +3,12 @@ from . import models
 from django.core.exceptions import ValidationError
 from django.contrib import messages
 
-admin.site.register(models.Vendor)
+
+class VendorAdmin(admin.ModelAdmin):
+    search_fields = ["full_name","mobile"]
+    list_display=['full_name','address','mobile','photo']
+admin.site.register(models.Vendor,VendorAdmin)
+
 admin.site.register(models.Unit)
 admin.site.register(models.Product)
 

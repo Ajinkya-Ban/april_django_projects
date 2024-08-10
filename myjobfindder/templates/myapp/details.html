@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+
+            width:80%;
+            min-height: 300px;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>{{getData.job_title}}</h2>
+
+        <p>
+            {{getData.desc | safe}}</p>
+    </div>
+</body>
+</html>
